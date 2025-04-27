@@ -1,5 +1,6 @@
 package Hello.Hello_Spring;
 
+import Hello.Hello_Spring.aop.TimeTraceAop;
 import Hello.Hello_Spring.repository.*;
 import Hello.Hello_Spring.service.MemberService;
 import jakarta.persistence.EntityManager;
@@ -39,6 +40,12 @@ public class SpringConfig {
 //        return new JdbcMemberRepository(dataSource);
 //        return new JpaMemberRepository(em);
 
+        return null;
+    }
+
+    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
     }
 
 }
